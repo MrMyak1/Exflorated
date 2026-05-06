@@ -13,7 +13,14 @@ import java.util.function.Supplier;
 public class ItemRegistry {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Exflorated.MODID);
 
+    public static final DeferredItem<Item> CITRON = ITEMS.register("citron",
+            () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> SHALLOT = ITEMS.register("shallot",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> CANTALOUPE = ITEMS.register("cantaloupe",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
