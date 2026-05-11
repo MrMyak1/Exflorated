@@ -1,5 +1,7 @@
 package com.myak.exflorated;
 
+import com.myak.exflorated.registries.BlockRegistry;
+import com.myak.exflorated.registries.ItemRegistry;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -47,6 +49,9 @@ public class Exflorated {
         // Note that this is necessary if and only if we want *this* class (Exflorated) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+
+        ItemRegistry.register(modEventBus);
+        BlockRegistry.register(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

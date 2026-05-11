@@ -27,5 +27,8 @@ public class ModBlockLootSubProvider extends BlockLootSubProvider {
     }
     @Override
     protected void generate() {
+        dropSelf(BlockRegistry.CITRINE_SAPLING.get());
+        dropSelf(BlockRegistry.CITRINE_LOG.get());
+        dropSelf(BlockRegistry.CITRINE_LEAVES.get());
     }
 }
