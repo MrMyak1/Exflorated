@@ -1,11 +1,18 @@
 package com.myak.exflorated.registries;
 
 import com.myak.exflorated.Exflorated;
+import com.myak.exflorated.block.ModLogBlock;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -18,13 +25,17 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> CITRINE_SAPLING = registerBlock("citrine_sapling",()-> new Block(BlockBehaviour.Properties.of()
             .strength(0F, 0f)
             .sound(SoundType.GRASS)));
-    public static final DeferredBlock<Block> CITRINE_LOG = registerBlock("citrine_log",()-> new Block(BlockBehaviour.Properties.of()
-            .strength(2F, 2f)
-            .sound(SoundType.WOOD)));
-    public static final DeferredBlock<Block> CITRINE_LEAVES = registerBlock("citrine_leaves",()-> new Block(BlockBehaviour.Properties.of()
-            .strength(0F, 0f)
-            .sound(SoundType.GRASS)));
+    public static final DeferredBlock<Block> CITRINE_LOG = registerBlock("citrine_log",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
+    public static final DeferredBlock<Block> CITRINE_STRIPPED_LOG = registerBlock("citrine_stripped_log",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+    public static final DeferredBlock<Block> CITRINE_LEAVES = registerBlock("citrine_leaves",()-> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
+    public static final DeferredBlock<Block> CITRINE_PLANKS = registerBlock("citrine_planks",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)) {
 
+        @Override
+        public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+            return 20;
+        }
+
+    });
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

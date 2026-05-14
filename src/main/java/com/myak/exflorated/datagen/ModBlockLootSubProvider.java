@@ -29,6 +29,8 @@ public class ModBlockLootSubProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(BlockRegistry.CITRINE_SAPLING.get());
         dropSelf(BlockRegistry.CITRINE_LOG.get());
-        dropSelf(BlockRegistry.CITRINE_LEAVES.get());
+        add(BlockRegistry.CITRINE_LEAVES.get(), block ->
+                createLeavesDrops(block, BlockRegistry.CITRINE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(BlockRegistry.CITRINE_PLANKS.get());
     }
 }
