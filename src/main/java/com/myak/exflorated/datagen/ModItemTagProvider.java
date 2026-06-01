@@ -21,11 +21,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-            this.tag(ItemTags.LOGS_THAT_BURN)
-                    .add(BlockRegistry.CITRINE_LOG.get().asItem())
-                    .add(BlockRegistry.CITRINE_STRIPPED_LOG.get().asItem());
+        this.tag(ItemTags.LOGS_THAT_BURN)
+                .add(BlockRegistry.CITRINE_LOG.get().asItem())
+                .add(BlockRegistry.CITRINE_STRIPPED_LOG.get().asItem());
 
-            this.tag(ItemTags.PLANKS)
-                    .add(BlockRegistry.CITRINE_PLANKS.get().asItem());
+        this.tag(ItemTags.PLANKS)
+                .add(BlockRegistry.CITRINE_PLANKS.get().asItem());
     }
 }
