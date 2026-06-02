@@ -3,11 +3,15 @@ package com.myak.exflorated.worldgen;
 import com.myak.exflorated.Exflorated;
 import com.myak.exflorated.registries.BlockRegistry;
 import io.netty.bootstrap.Bootstrap;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.IntProvider;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
@@ -15,7 +19,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.*;
 
 public class ModConfiguredFeatures {
 
@@ -24,10 +28,10 @@ public class ModConfiguredFeatures {
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?,?>> context) {
         register(context, CITRINE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(BlockRegistry.CITRINE_LOG.get()),
-                new ForkingTrunkPlacer(4,4,3),
+                new StraightTrunkPlacer(4,2,1),
                 BlockStateProvider.simple(BlockRegistry.CITRINE_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
-                new TwoLayersFeatureSize(1, 0,2)).build()
+                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
+                new TwoLayersFeatureSize(1, 0,1)).build()
         );
     }
 

@@ -31,10 +31,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(BlockRegistry.CITRINE_LOG);
         blockItem(BlockRegistry.CITRINE_STRIPPED_LOG);
         blockItem(BlockRegistry.CITRINE_PLANKS);
+        //blockWithItem(BlockRegistry.CITRINE_LEAVES);
 
     }
     private void blockWithItem(Supplier<Block> blockSupplier) {
-        simpleBlockItem(blockSupplier.get(), cubeAll(blockSupplier.get()));
+        simpleBlockWithItem(blockSupplier.get(), cubeAll(blockSupplier.get()));
     }
     private void saplingBlock(DeferredBlock<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(), models().cross(BuiltInRegistries.BLOCK.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
