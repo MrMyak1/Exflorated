@@ -23,13 +23,13 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.*;
 
 public class ModConfiguredFeatures {
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> CITRINE_KEY = registerKey("citrine_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CITRON_KEY = registerKey("citron_tree");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?,?>> context) {
-        register(context, CITRINE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(BlockRegistry.CITRINE_LOG.get()),
+        register(context, CITRON_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(BlockRegistry.CITRON_LOG.get()),
                 new StraightTrunkPlacer(4,2,1),
-                BlockStateProvider.simple(BlockRegistry.CITRINE_LEAVES.get()),
+                BlockStateProvider.simple(BlockRegistry.CITRON_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
                 new TwoLayersFeatureSize(1, 0,1)).build()
         );

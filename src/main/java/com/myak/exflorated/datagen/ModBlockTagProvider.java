@@ -20,7 +20,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider lookupProvider) {
         this.tag(BlockTags.LOGS_THAT_BURN)
-                .add(BlockRegistry.CITRINE_LOG.get())
-                .add(BlockRegistry.CITRINE_STRIPPED_LOG.get());
+                .add(BlockRegistry.CITRON_LOG.get())
+                .add(BlockRegistry.CITRON_STRIPPED_LOG.get());
     }
 }

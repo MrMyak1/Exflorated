@@ -7,5 +7,5 @@ import net.minecraft.world.level.block.grower.TreeGrower;
 import java.util.Optional;
 
 public class ModTreeGrower {
-    public static final TreeGrower CITRINE_TREE = new TreeGrower(Exflorated.MODID + ":citrine", Optional.empty(), Optional.of(ModConfiguredFeatures.CITRINE_KEY), Optional.empty());
+    public static final TreeGrower CITRON_TREE = new TreeGrower(Exflorated.MODID + ":citron", Optional.empty(), Optional.of(ModConfiguredFeatures.CITRON_KEY), Optional.empty());
 }

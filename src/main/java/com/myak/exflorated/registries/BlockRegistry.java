@@ -20,11 +20,11 @@ import java.util.function.Supplier;
 public class BlockRegistry {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Exflorated.MODID);
 
-    public static final DeferredBlock<Block> CITRINE_SAPLING = registerBlock("citrine_sapling",()-> new SaplingBlock(ModTreeGrower.CITRINE_TREE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-    public static final DeferredBlock<Block> CITRINE_LOG = registerBlock("citrine_log",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
-    public static final DeferredBlock<Block> CITRINE_STRIPPED_LOG = registerBlock("citrine_stripped_log",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
-    public static final DeferredBlock<Block> CITRINE_LEAVES = registerBlock("citrine_leaves",()-> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
-    public static final DeferredBlock<Block> CITRINE_PLANKS = registerBlock("citrine_planks",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)) {
+    public static final DeferredBlock<Block> CITRON_SAPLING = registerBlock("citron_sapling",()-> new SaplingBlock(ModTreeGrower.CITRON_TREE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+    public static final DeferredBlock<Block> CITRON_LOG = registerBlock("citron_log",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
+    public static final DeferredBlock<Block> CITRON_STRIPPED_LOG = registerBlock("citron_stripped_log",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+    public static final DeferredBlock<Block> CITRON_LEAVES = registerBlock("citron_leaves",()-> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
+    public static final DeferredBlock<Block> CITRON_PLANKS = registerBlock("citron_planks",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)) {
 
         @Override
         public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {

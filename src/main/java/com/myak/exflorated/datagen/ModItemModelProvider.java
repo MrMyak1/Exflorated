@@ -17,7 +17,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        saplingItem(BlockRegistry.CITRINE_SAPLING);
+        saplingItem(BlockRegistry.CITRON_SAPLING);
     }
 
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {

@@ -22,15 +22,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        logBlock((RotatedPillarBlock) BlockRegistry.CITRINE_LOG.get());
-        logBlock((RotatedPillarBlock) BlockRegistry.CITRINE_STRIPPED_LOG.get());
-        saplingBlock(BlockRegistry.CITRINE_SAPLING);
-        blockWithItem(BlockRegistry.CITRINE_PLANKS);
-        leavesBlock(BlockRegistry.CITRINE_LEAVES);
+        logBlock((RotatedPillarBlock) BlockRegistry.CITRON_LOG.get());
+        logBlock((RotatedPillarBlock) BlockRegistry.CITRON_STRIPPED_LOG.get());
+        saplingBlock(BlockRegistry.CITRON_SAPLING);
+        blockWithItem(BlockRegistry.CITRON_PLANKS);
+        leavesBlock(BlockRegistry.CITRON_LEAVES);
 
-        blockItem(BlockRegistry.CITRINE_LOG);
-        blockItem(BlockRegistry.CITRINE_STRIPPED_LOG);
-        blockItem(BlockRegistry.CITRINE_PLANKS);
+        blockItem(BlockRegistry.CITRON_LOG);
+        blockItem(BlockRegistry.CITRON_STRIPPED_LOG);
+        blockItem(BlockRegistry.CITRON_PLANKS);
+        blockItem(BlockRegistry.CITRON_LEAVES);
         //blockWithItem(BlockRegistry.CITRINE_LEAVES);
 
     }

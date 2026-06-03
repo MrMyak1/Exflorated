@@ -35,8 +35,8 @@ public class ModLogBlock extends RotatedPillarBlock {
     @Override
     public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
         if(context.getItemInHand().getItem() instanceof AxeItem) {
-            if(state.is(BlockRegistry.CITRINE_LOG)) {
-                return BlockRegistry.CITRINE_STRIPPED_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            if(state.is(BlockRegistry.CITRON_LOG)) {
+                return BlockRegistry.CITRON_STRIPPED_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
         }
 
