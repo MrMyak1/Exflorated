@@ -2,6 +2,7 @@ package com.myak.exflorated;
 
 import com.myak.exflorated.registries.BlockRegistry;
 import com.myak.exflorated.registries.ItemRegistry;
+import com.myak.exflorated.registries.LootModifierRegistry;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -50,8 +51,9 @@ public class Exflorated {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        ItemRegistry.register(modEventBus);
-        BlockRegistry.register(modEventBus);
+        ItemRegistry.ITEMS.register(modEventBus);
+        BlockRegistry.BLOCKS.register(modEventBus);
+        LootModifierRegistry.GLOBAL_LOOT_MODIFIERS.register(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

@@ -1,7 +1,10 @@
 package com.myak.exflorated.registries;
 
 import com.myak.exflorated.Exflorated;
+import net.minecraft.references.Blocks;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -13,7 +16,7 @@ public class ItemRegistry {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SHALLOT = ITEMS.register("shallot",
-            () -> new Item(new Item.Properties()));
+            () -> new ItemNameBlockItem(BlockRegistry.SHALLOT_CROP.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> CANTALOUPE = ITEMS.register("cantaloupe",
             () -> new Item(new Item.Properties()));
@@ -21,7 +24,4 @@ public class ItemRegistry {
     public static final DeferredItem<Item> TRANSWHEAT = ITEMS.register("transwheat",
             () -> new Item(new Item.Properties()));
 
-    public static void register(IEventBus eventBus) {
-        ITEMS.register(eventBus);
-    }
 }

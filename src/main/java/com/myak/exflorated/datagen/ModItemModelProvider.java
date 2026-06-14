@@ -2,6 +2,7 @@ package com.myak.exflorated.datagen;
 
 import com.myak.exflorated.Exflorated;
 import com.myak.exflorated.registries.BlockRegistry;
+import com.myak.exflorated.registries.ItemRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -18,6 +19,8 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         saplingItem(BlockRegistry.CITRON_SAPLING);
+        basicItem(ItemRegistry.SHALLOT.get());
+        basicItem(ItemRegistry.CITRON.get());
     }
 
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {

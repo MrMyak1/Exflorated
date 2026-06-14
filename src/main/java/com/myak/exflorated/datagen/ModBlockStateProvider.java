@@ -1,17 +1,22 @@
 package com.myak.exflorated.datagen;
 
 import com.myak.exflorated.Exflorated;
+import com.myak.exflorated.block.ShallotCropBlock;
 import com.myak.exflorated.registries.BlockRegistry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -33,6 +38,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(BlockRegistry.CITRON_PLANKS);
         blockItem(BlockRegistry.CITRON_LEAVES);
         //blockWithItem(BlockRegistry.CITRINE_LEAVES);
+        makeCrop(((CropBlock) BlockRegistry.SHALLOT_CROP.get()), "shallot_crop_stage", "shallot_crop_stage");
 
     }
     private void blockWithItem(Supplier<Block> blockSupplier) {
@@ -44,6 +50,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void leavesBlock(DeferredBlock<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(), models().singleTexture(BuiltInRegistries.BLOCK.getKey(blockRegistryObject.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"), "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+    public void makeCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> states(state, block, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] states(BlockState state, CropBlock block, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((ShallotCropBlock) block).getAgeProperty()),
+                ResourceLocation.fromNamespaceAndPath(Exflorated.MODID, "block/" + textureName + state.getValue(((ShallotCropBlock) block).getAgeProperty()))).renderType("cutout"));
+
+        return models;
     }
 
     private void blockItem(DeferredBlock<?> deferredBlock) {

@@ -1,10 +1,13 @@
 {
   "item.exflorated.citron": "Citron",
   "item.exflorated.shallot": "Shallot",
-  "item.exflotated.transwheat": "Wheat for the Trans people",
+  "item.exflotated.transwheat": "Transwheat",
+
+
   "block.exflorated.citron_sapling": "Citron Sapling",
   "block.exflorated.citron_leaves": "Citron Leaves",
   "block.exflorated.citron_log": "Citron Log",
   "block.exflorated.citron_stripped_log": "Citron Stripped Log",
-  "block.exflorated.citron_planks": "Citron Planks"
+  "block.exflorated.citron_planks": "Citron Planks",
+  "block.exflorated.citron_shallot": "Shallot"
 }

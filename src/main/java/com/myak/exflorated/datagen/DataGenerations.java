@@ -1,6 +1,7 @@
 package com.myak.exflorated.datagen;
 
 import com.myak.exflorated.Exflorated;
+import com.myak.exflorated.worldgen.ModConfiguredFeatures;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -33,5 +34,6 @@ public class DataGenerations {
         generator.addProvider(event.includeServer(), new ModAdvancementProvider(output, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(output, existingFileHelper));
         generator.addProvider(event.includeServer(), new ModDatapackProvider(output, lookupProvider));
+        event.getGenerator().addProvider(event.includeServer(), ModGlobalLootModifierProvider::new);
     }
 }

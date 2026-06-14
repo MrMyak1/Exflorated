@@ -2,6 +2,7 @@ package com.myak.exflorated.registries;
 
 import com.myak.exflorated.Exflorated;
 import com.myak.exflorated.block.ModLogBlock;
+import com.myak.exflorated.block.ShallotCropBlock;
 import com.myak.exflorated.worldgen.tree.ModTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -26,12 +27,15 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> CITRON_LEAVES = registerBlock("citron_leaves",()-> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
     public static final DeferredBlock<Block> CITRON_PLANKS = registerBlock("citron_planks",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)) {
 
+
         @Override
         public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
             return 20;
         }
 
     });
+    public static final DeferredBlock<Block> SHALLOT_CROP = BLOCKS.register("shallot_crop",
+            ()-> new ShallotCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
@@ -40,8 +44,5 @@ public class BlockRegistry {
     }
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
         ItemRegistry.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
-    }
-    public static void register(IEventBus eventBus) {
-        BLOCKS.register(eventBus);
     }
 }

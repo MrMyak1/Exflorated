@@ -1,10 +1,15 @@
 package com.myak.exflorated.datagen;
 
+import com.myak.exflorated.block.ShallotCropBlock;
 import com.myak.exflorated.registries.BlockRegistry;
+import com.myak.exflorated.registries.ItemRegistry;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 
 import java.util.Set;
 
@@ -34,6 +39,9 @@ public class ModBlockLootSubProvider extends BlockLootSubProvider {
         dropSelf(BlockRegistry.CITRON_PLANKS.get());
         dropSelf(BlockRegistry.CITRON_STRIPPED_LOG.get());
 
+        LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.SHALLOT_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ShallotCropBlock.AGE, 4));
+        this.add(BlockRegistry.SHALLOT_CROP.get(), this.createCropDrops(BlockRegistry.SHALLOT_CROP.get(), ItemRegistry.SHALLOT.get(),ItemRegistry.SHALLOT.get(), lootItemConditionBuilder));
 
 
     }
