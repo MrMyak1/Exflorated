@@ -1,6 +1,7 @@
 package com.myak.exflorated;
 
 import com.myak.exflorated.registries.BlockRegistry;
+import com.myak.exflorated.registries.CreativeTabRegistry;
 import com.myak.exflorated.registries.ItemRegistry;
 import com.myak.exflorated.registries.LootModifierRegistry;
 import org.slf4j.Logger;
@@ -54,6 +55,7 @@ public class Exflorated {
         ItemRegistry.ITEMS.register(modEventBus);
         BlockRegistry.BLOCKS.register(modEventBus);
         LootModifierRegistry.GLOBAL_LOOT_MODIFIERS.register(modEventBus);
+        CreativeTabRegistry.CREATIVE_MOD_TAB.register(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

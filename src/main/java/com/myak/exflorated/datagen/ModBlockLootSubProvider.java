@@ -38,6 +38,16 @@ public class ModBlockLootSubProvider extends BlockLootSubProvider {
                 createOakLeavesDrops(block, BlockRegistry.CITRON_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         dropSelf(BlockRegistry.CITRON_PLANKS.get());
         dropSelf(BlockRegistry.CITRON_STRIPPED_LOG.get());
+        dropSelf(BlockRegistry.CITRON_STRIPPED_WOOD.get());
+        dropSelf(BlockRegistry.CITRON_WOOD.get());
+        dropSelf(BlockRegistry.CITRON_SLAB.get());
+        dropSelf(BlockRegistry.CITRON_STAIRS.get());
+        dropSelf(BlockRegistry.CITRON_FENCE.get());
+        dropSelf(BlockRegistry.CITRON_FENCE_GATE.get());
+        dropSelf(BlockRegistry.CITRON_TRAPDOOR.get());
+        dropSelf(BlockRegistry.CITRON_DOOR.get());
+        dropSelf(BlockRegistry.CITRON_PRESSURE_PLATE.get());
+        dropSelf(BlockRegistry.CITRON_BUTTON.get());
 
         LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.SHALLOT_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ShallotCropBlock.AGE, 4));

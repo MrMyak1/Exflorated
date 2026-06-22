@@ -32,11 +32,21 @@ public class ModBlockStateProvider extends BlockStateProvider {
         saplingBlock(BlockRegistry.CITRON_SAPLING);
         blockWithItem(BlockRegistry.CITRON_PLANKS);
         leavesBlock(BlockRegistry.CITRON_LEAVES);
+        axisBlock(((RotatedPillarBlock) BlockRegistry.CITRON_WOOD.get()), blockTexture(BlockRegistry.CITRON_LOG.get()), blockTexture(BlockRegistry.CITRON_LOG.get()));
+        axisBlock(((RotatedPillarBlock) BlockRegistry.CITRON_STRIPPED_WOOD.get()), blockTexture(BlockRegistry.CITRON_STRIPPED_LOG.get()), blockTexture(BlockRegistry.CITRON_STRIPPED_LOG.get()));
+        slabBlock(BlockRegistry.CITRON_SLAB.get(),blockTexture(BlockRegistry.CITRON_PLANKS.get()), blockTexture(BlockRegistry.CITRON_PLANKS.get()));
+        stairsBlock(BlockRegistry.CITRON_STAIRS.get(),blockTexture(BlockRegistry.CITRON_PLANKS.get()));
+        fenceBlock(BlockRegistry.CITRON_FENCE.get(),blockTexture(BlockRegistry.CITRON_PLANKS.get()));
+        fenceGateBlock(BlockRegistry.CITRON_FENCE_GATE.get(),blockTexture(BlockRegistry.CITRON_PLANKS.get()));
+        doorBlockWithRenderType(BlockRegistry.CITRON_DOOR.get(), modLoc("block/citron_door_bottom"), modLoc("block/citron_door_top"), "cutout");
+        trapdoorBlockWithRenderType(BlockRegistry.CITRON_TRAPDOOR.get(), modLoc("block/citron_trapdoor"), true, "cutout");
 
         blockItem(BlockRegistry.CITRON_LOG);
         blockItem(BlockRegistry.CITRON_STRIPPED_LOG);
-        blockItem(BlockRegistry.CITRON_PLANKS);
+        //blockItem(BlockRegistry.CITRON_PLANKS);
         blockItem(BlockRegistry.CITRON_LEAVES);
+        blockItem(BlockRegistry.CITRON_WOOD);
+        blockItem(BlockRegistry.CITRON_STRIPPED_WOOD);
         //blockWithItem(BlockRegistry.CITRINE_LEAVES);
         makeCrop(((CropBlock) BlockRegistry.SHALLOT_CROP.get()), "shallot_crop_stage", "shallot_crop_stage");
 

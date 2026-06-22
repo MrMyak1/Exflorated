@@ -12,6 +12,8 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -23,9 +25,11 @@ public class BlockRegistry {
 
     public static final DeferredBlock<Block> CITRON_SAPLING = registerBlock("citron_sapling",()-> new SaplingBlock(ModTreeGrower.CITRON_TREE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
     public static final DeferredBlock<Block> CITRON_LOG = registerBlock("citron_log",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
+    public static final DeferredBlock<Block> CITRON_WOOD = registerBlock("citron_wood",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
     public static final DeferredBlock<Block> CITRON_STRIPPED_LOG = registerBlock("citron_stripped_log",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+    public static final DeferredBlock<Block> CITRON_STRIPPED_WOOD = registerBlock("citron_stripped_wood",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
     public static final DeferredBlock<Block> CITRON_LEAVES = registerBlock("citron_leaves",()-> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
-    public static final DeferredBlock<Block> CITRON_PLANKS = registerBlock("citron_planks",()-> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)) {
+    public static final DeferredBlock<Block> CITRON_PLANKS = registerBlock("citron_planks",()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)) {
 
 
         @Override
@@ -34,6 +38,14 @@ public class BlockRegistry {
         }
 
     });
+    public static final DeferredBlock<SlabBlock> CITRON_SLAB = registerBlock("citron_slab",()-> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)));
+    public static final DeferredBlock<StairBlock> CITRON_STAIRS = registerBlock("citron_stairs",()-> new StairBlock(BlockRegistry.CITRON_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)));
+    public static final DeferredBlock<FenceBlock> CITRON_FENCE = registerBlock("citron_fence",()-> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)));
+    public static final DeferredBlock<FenceGateBlock> CITRON_FENCE_GATE = registerBlock("citron_fence_gate",()-> new FenceGateBlock(WoodType.OAK,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)));
+    public static final DeferredBlock<TrapDoorBlock> CITRON_TRAPDOOR = registerBlock("citron_trapdoor",()-> new TrapDoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)));
+    public static final DeferredBlock<DoorBlock> CITRON_DOOR = registerBlock("citron_door",()-> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR)));
+    public static final DeferredBlock<ButtonBlock> CITRON_BUTTON = registerBlock("citron_button",()-> new ButtonBlock(BlockSetType.OAK, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
+    public static final DeferredBlock<PressurePlateBlock> CITRON_PRESSURE_PLATE = registerBlock("citron_pressure_plate",()-> new PressurePlateBlock(BlockSetType.OAK,  BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
     public static final DeferredBlock<Block> SHALLOT_CROP = BLOCKS.register("shallot_crop",
             ()-> new ShallotCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS)));
 

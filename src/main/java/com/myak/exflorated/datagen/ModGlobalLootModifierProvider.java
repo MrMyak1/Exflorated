@@ -17,8 +17,8 @@ import java.util.concurrent.CompletableFuture;
 public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
 
 
-    public ModGlobalLootModifierProvider(PackOutput output) {
-        super(output, Exflorated.MODID);
+    public ModGlobalLootModifierProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> future) {
+        super(output, future, Exflorated.MODID);
     }
 
     @Override
