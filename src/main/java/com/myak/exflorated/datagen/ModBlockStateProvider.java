@@ -40,6 +40,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         fenceGateBlock(BlockRegistry.CITRON_FENCE_GATE.get(),blockTexture(BlockRegistry.CITRON_PLANKS.get()));
         doorBlockWithRenderType(BlockRegistry.CITRON_DOOR.get(), modLoc("block/citron_door_bottom"), modLoc("block/citron_door_top"), "cutout");
         trapdoorBlockWithRenderType(BlockRegistry.CITRON_TRAPDOOR.get(), modLoc("block/citron_trapdoor"), true, "cutout");
+        buttonBlock(BlockRegistry.CITRON_BUTTON.get(), blockTexture(BlockRegistry.CITRON_PLANKS.get()));
+        pressurePlateBlock(BlockRegistry.CITRON_PRESSURE_PLATE.get(), blockTexture(BlockRegistry.CITRON_PLANKS.get()));
 
         blockItem(BlockRegistry.CITRON_LOG);
         blockItem(BlockRegistry.CITRON_STRIPPED_LOG);

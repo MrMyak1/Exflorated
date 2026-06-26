@@ -3,6 +3,7 @@ package com.myak.exflorated.item;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
 
 public class PurefyingOilItem extends Item {
     public PurefyingOilItem(Properties properties) {
@@ -11,6 +12,8 @@ public class PurefyingOilItem extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
-        return super.useOn(context);
+        Level level = context.getLevel();
+        return InteractionResult.SUCCESS;
     }
+
 }

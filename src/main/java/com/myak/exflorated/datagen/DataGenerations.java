@@ -34,6 +34,6 @@ public class DataGenerations {
         generator.addProvider(event.includeServer(), new ModAdvancementProvider(output, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(output, existingFileHelper));
         generator.addProvider(event.includeServer(), new ModDatapackProvider(output, lookupProvider));
-        //generator.addProvider(event.includeClient(), new ModGlobalLootModifierProvider(output, lookupProvider));      -Unused
+        generator.addProvider(event.includeClient(), new ModGlobalLootModifierProvider(output, lookupProvider));
     }
 }

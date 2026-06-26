@@ -3,6 +3,7 @@ package com.myak.exflorated.loot_modifier;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.Util;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.item.Item;
@@ -12,6 +13,7 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootModifier;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -31,11 +33,20 @@ public class SnifferLootModifier extends LootModifier {
     }
 
     @Override
-    protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedloot, LootContext lootContext) {
+    protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedloot, LootContext lootContext) {
+        ObjectArrayList<ItemStack> newLoot = new ObjectArrayList<>();
 
+        for (LootItemCondition condition : this.conditions) {
+            if (!condition.test(lootContext)) {
+                return generatedloot;
+            }
+        }
         generatedloot.add(Items.PITCHER_POD.getDefaultInstance());
         generatedloot.add(Items.TORCHFLOWER_SEEDS.getDefaultInstance());
 
-        return generatedloot;
+        items.forEach(item -> generatedloot.add(item.getDefaultInstance()));
+        newLoot.add(Util.getRandom(generatedloot, lootContext.getRandom()));
+
+        return newLoot;
     }
 }
