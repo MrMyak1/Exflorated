@@ -12,7 +12,7 @@ public class ModDatamaps {
             ResourceLocation.fromNamespaceAndPath("exflorated", "block_cleansing"),
             Registries.BLOCK,
             PurifyingOilCleansingMap.CODEC
-    ).build();
+    ).synced(PurifyingOilCleansingMap.CODEC, true).build();
 
     @SubscribeEvent
     public static void registerDataMapTypes(RegisterDataMapTypesEvent event) {

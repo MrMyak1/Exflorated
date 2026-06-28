@@ -46,6 +46,7 @@ public class BlockRegistry {
     public static final DeferredBlock<DoorBlock> CITRON_DOOR = registerBlock("citron_door",()-> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR)));
     public static final DeferredBlock<ButtonBlock> CITRON_BUTTON = registerBlock("citron_button",()-> new ButtonBlock(BlockSetType.OAK, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
     public static final DeferredBlock<PressurePlateBlock> CITRON_PRESSURE_PLATE = registerBlock("citron_pressure_plate",()-> new PressurePlateBlock(BlockSetType.OAK,  BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
+
     public static final DeferredBlock<Block> SHALLOT_CROP = BLOCKS.register("shallot_crop",
             ()-> new ShallotCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS)));
 

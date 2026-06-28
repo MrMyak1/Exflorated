@@ -26,9 +26,18 @@ public class ModDataMapProvider extends DataMapProvider {
     @Override
     protected void gather(HolderLookup.Provider provider) {
         builder(ModDatamaps.BLOCK_CLEANSING)
-                .add(getHolder(Blocks.SCULK), new PurifyingOilCleansingMap(Blocks.DIRT), false)
-                .add(getHolder(Blocks.WARPED_STEM), new PurifyingOilCleansingMap(Blocks.CRIMSON_STEM), false);
-                //.add(PastelBlocks.BLACK_MATERIA , new PurifyingOilCleansingMap(Blocks.DIRT), false, new ModLoadedCondition("pastel"));
+                .add(getHolder(Blocks.SCULK), new PurifyingOilCleansingMap(getHolder(Blocks.DIRT)), false)
+                .add(getHolder(Blocks.SCULK_CATALYST), new PurifyingOilCleansingMap(getHolder(Blocks.AIR)), false)
+                .add(getHolder(Blocks.SCULK_VEIN), new PurifyingOilCleansingMap(getHolder(Blocks.VINE)), false)
+                .add(getHolder(Blocks.SCULK_SENSOR), new PurifyingOilCleansingMap(getHolder(Blocks.AIR)), false)
+                .add(getHolder(Blocks.SCULK_SHRIEKER), new PurifyingOilCleansingMap(getHolder(Blocks.BONE_BLOCK)), false)
+                .add(getHolder(Blocks.CALIBRATED_SCULK_SENSOR), new PurifyingOilCleansingMap(getHolder(Blocks.AMETHYST_CLUSTER)), false)
+
+                .add(getHolder(Blocks.WARPED_STEM), new PurifyingOilCleansingMap(getHolder(Blocks.CRIMSON_STEM)), false)
+                .add(getHolder(Blocks.WARPED_WART_BLOCK), new PurifyingOilCleansingMap(getHolder(Blocks.NETHER_WART_BLOCK)), false)
+                .add(getHolder(Blocks.WARPED_NYLIUM), new PurifyingOilCleansingMap(getHolder(Blocks.CRIMSON_NYLIUM)), false);
+
+
     }
     private Holder<Block> getHolder(Block block) {
         return BuiltInRegistries.BLOCK.wrapAsHolder(block);
