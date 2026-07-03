@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 public class CreativeTabRegistry {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MOD_TAB = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Exflorated.MODID);
 
-    public static final Supplier<CreativeModeTab> EXFLORATED_TAB = CREATIVE_MOD_TAB.register("exflorated_tab",
+    public static final Supplier<CreativeModeTab> EXFLORATED_ITEMS = CREATIVE_MOD_TAB.register("exflorated_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.CITRON.get()))
                     .title(Component.translatable("creativetab.exflorated.exflorated_tab"))
                     .displayItems((itemDisplayParameters, output) -> {

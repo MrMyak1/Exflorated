@@ -1,13 +1,10 @@
 package com.myak.exflorated.registries;
 
 import com.myak.exflorated.Exflorated;
-import com.myak.exflorated.item.PurefyingOilItem;
-import net.minecraft.references.Blocks;
+import com.myak.exflorated.item.PurifyingOilItem;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.level.block.Block;
-import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -32,7 +29,7 @@ public class ItemRegistry {
 
 
     public static final DeferredItem<Item> PURIFYING_OIL = ITEMS.register("purifying_oil",
-            () -> new PurefyingOilItem(new Item.Properties()));
+            () -> new PurifyingOilItem(new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> GARLIC_BREAD = ITEMS.register("garlic_bread",
             () -> new Item(new Item.Properties().food(Foods.COOKED_BEEF)));

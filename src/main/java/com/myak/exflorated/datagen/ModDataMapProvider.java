@@ -3,6 +3,7 @@ package com.myak.exflorated.datagen;
 import com.myak.exflorated.datamaps.ModDatamaps;
 import com.myak.exflorated.datamaps.PurifyingOilCleansingMap;
 //import earth.terrarium.pastel.registries.PastelItems;
+import com.myak.exflorated.registries.BlockRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -35,9 +36,9 @@ public class ModDataMapProvider extends DataMapProvider {
 
                 .add(getHolder(Blocks.WARPED_STEM), new PurifyingOilCleansingMap(getHolder(Blocks.CRIMSON_STEM)), false)
                 .add(getHolder(Blocks.WARPED_WART_BLOCK), new PurifyingOilCleansingMap(getHolder(Blocks.NETHER_WART_BLOCK)), false)
-                .add(getHolder(Blocks.WARPED_NYLIUM), new PurifyingOilCleansingMap(getHolder(Blocks.CRIMSON_NYLIUM)), false);
+                .add(getHolder(Blocks.WARPED_NYLIUM), new PurifyingOilCleansingMap(getHolder(Blocks.CRIMSON_NYLIUM)), false)
 
-
+                .add(BlockRegistry.REINFORCED_SCULK, new PurifyingOilCleansingMap(getHolder(Blocks.BONE_BLOCK)), false);
     }
     private Holder<Block> getHolder(Block block) {
         return BuiltInRegistries.BLOCK.wrapAsHolder(block);

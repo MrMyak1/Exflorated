@@ -43,13 +43,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
         buttonBlock(BlockRegistry.CITRON_BUTTON.get(), blockTexture(BlockRegistry.CITRON_PLANKS.get()));
         pressurePlateBlock(BlockRegistry.CITRON_PRESSURE_PLATE.get(), blockTexture(BlockRegistry.CITRON_PLANKS.get()));
 
+        blockWithItem(BlockRegistry.REINFORCED_SCULK);
+
         blockItem(BlockRegistry.CITRON_LOG);
         blockItem(BlockRegistry.CITRON_STRIPPED_LOG);
         //blockItem(BlockRegistry.CITRON_PLANKS);
         blockItem(BlockRegistry.CITRON_LEAVES);
         blockItem(BlockRegistry.CITRON_WOOD);
         blockItem(BlockRegistry.CITRON_STRIPPED_WOOD);
-        //blockWithItem(BlockRegistry.CITRINE_LEAVES);
+        blockItem(BlockRegistry.CITRON_SLAB);
+        blockItem(BlockRegistry.CITRON_STAIRS);
+        blockItem(BlockRegistry.CITRON_PRESSURE_PLATE);
+        blockItem(BlockRegistry.CITRON_FENCE_GATE);
+        blockItem(BlockRegistry.CITRON_TRAPDOOR, "_bottom");
         makeCrop(((CropBlock) BlockRegistry.SHALLOT_CROP.get()), "shallot_crop_stage", "shallot_crop_stage");
 
     }
@@ -79,6 +85,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void blockItem(DeferredBlock<?> deferredBlock) {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("exflorated:block/" + deferredBlock.getId().getPath()));
+    }
+    private void blockItem(DeferredBlock<?> deferredBlock, String appendix) {
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("exflorated:block/" + deferredBlock.getId().getPath() + appendix));
     }
 
 }

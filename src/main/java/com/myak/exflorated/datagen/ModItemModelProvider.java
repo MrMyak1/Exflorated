@@ -21,6 +21,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         saplingItem(BlockRegistry.CITRON_SAPLING);
         basicItem(ItemRegistry.SHALLOT.get());
         basicItem(ItemRegistry.CITRON.get());
+        basicItem(ItemRegistry.PURIFYING_OIL.get());
+        basicItem(ItemRegistry.GARLIC_BREAD.get());
+        buttonItem(BlockRegistry.CITRON_BUTTON, BlockRegistry.CITRON_PLANKS);
+        fenceItem(BlockRegistry.CITRON_FENCE, BlockRegistry.CITRON_PLANKS);
+        basicItem(BlockRegistry.CITRON_DOOR.asItem());
+
     }
 
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {
@@ -28,5 +34,16 @@ public class ModItemModelProvider extends ItemModelProvider {
                 ResourceLocation.parse("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(Exflorated.MODID, "block/" + item.getId().getPath()));
     }
+    private ItemModelBuilder buttonItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
+        return  withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
+                .texture("texture", ResourceLocation.fromNamespaceAndPath(Exflorated.MODID,
+                        "block/" + baseBlock.getId().getPath()));
+    }
+    private ItemModelBuilder fenceItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
+        return  withExistingParent(block.getId().getPath(), mcLoc("block/fence_inventory"))
+                .texture("texture", ResourceLocation.fromNamespaceAndPath(Exflorated.MODID,
+                        "block/" + baseBlock.getId().getPath()));
+    }
+    
 
 }

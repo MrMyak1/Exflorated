@@ -9,5 +9,19 @@
   "block.exflorated.citron_log": "Citron Log",
   "block.exflorated.citron_stripped_log": "Citron Stripped Log",
   "block.exflorated.citron_planks": "Citron Planks",
-  "block.exflorated.citron_shallot": "Shallot"
+  "block.exflorated.citron_slab": "Citron Slab",
+  "block.exflorated.citron_stairs": "Citron Stairs",
+  "block.exflorated.citron_fence": "Citron Fence",
+  "block.exflorated.citron_fence_gate": "Citron Fence Gate",
+  "block.exflorated.citron_trapdoor": "Citron Trapdoor",
+  "block.exflorated.citron_door": "Citron Door",
+  "block.exflorated.citron_button": "Citron Button",
+  "block.exflorated.citron_pressure_plate": "Citron Pressure Plate",
+
+  "block.exflorated.reinforced_sculk": "Reinforced Sculk",
+  "block.exflorated.shrine_mechanism": "Archaic Aparatus",
+
+  "block.exflorated.citron_shallot": "Shallot",
+  "item.exflorated.purifying_oil": "Purifying Oil",
+  "item.exflorated.garlic_bread": "Garlic Bread"
 }

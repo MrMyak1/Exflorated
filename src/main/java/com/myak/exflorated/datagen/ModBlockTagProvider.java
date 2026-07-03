@@ -22,5 +22,20 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.LOGS_THAT_BURN)
                 .add(BlockRegistry.CITRON_LOG.get())
                 .add(BlockRegistry.CITRON_STRIPPED_LOG.get());
+        this.tag(BlockTags.PLANKS)
+                .add(BlockRegistry.CITRON_PLANKS.get());
+        this.tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(BlockRegistry.CITRON_LOG.get())
+                .add(BlockRegistry.CITRON_STRIPPED_LOG.get())
+                .add(BlockRegistry.CITRON_WOOD.get())
+                .add(BlockRegistry.CITRON_STRIPPED_WOOD.get())
+                .add(BlockRegistry.CITRON_SLAB.get())
+                .add(BlockRegistry.CITRON_STAIRS.get())
+                .add(BlockRegistry.CITRON_FENCE.get())
+                .add(BlockRegistry.CITRON_FENCE_GATE.get())
+                .add(BlockRegistry.CITRON_TRAPDOOR.get())
+                .add(BlockRegistry.CITRON_DOOR.get())
+                .add(BlockRegistry.CITRON_BUTTON.get())
+                .add(BlockRegistry.CITRON_PRESSURE_PLATE.get());
     }
 }

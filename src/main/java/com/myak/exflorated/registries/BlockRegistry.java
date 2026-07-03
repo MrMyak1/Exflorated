@@ -50,6 +50,9 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> SHALLOT_CROP = BLOCKS.register("shallot_crop",
             ()-> new ShallotCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS)));
 
+    public static final DeferredBlock<Block> REINFORCED_SCULK = registerBlock("reinforced_sculk",()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK)));
+    //public static final DeferredBlock<Block> SHRINE_MECHANISM = registerBlock("shrine_mechanism",()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS)));
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
