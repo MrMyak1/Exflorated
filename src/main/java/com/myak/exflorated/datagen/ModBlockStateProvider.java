@@ -6,9 +6,7 @@ import com.myak.exflorated.registries.BlockRegistry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
@@ -42,12 +40,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         trapdoorBlockWithRenderType(BlockRegistry.CITRON_TRAPDOOR.get(), modLoc("block/citron_trapdoor"), true, "cutout");
         buttonBlock(BlockRegistry.CITRON_BUTTON.get(), blockTexture(BlockRegistry.CITRON_PLANKS.get()));
         pressurePlateBlock(BlockRegistry.CITRON_PRESSURE_PLATE.get(), blockTexture(BlockRegistry.CITRON_PLANKS.get()));
+        signBlock((StandingSignBlock) BlockRegistry.CITRON_SIGN.get(), (WallSignBlock) BlockRegistry.CITRON_WALL_SIGN.get(), blockTexture(BlockRegistry.CITRON_PLANKS.get()));
 
         blockWithItem(BlockRegistry.REINFORCED_SCULK);
 
         blockItem(BlockRegistry.CITRON_LOG);
         blockItem(BlockRegistry.CITRON_STRIPPED_LOG);
-        //blockItem(BlockRegistry.CITRON_PLANKS);
+        blockItem(BlockRegistry.CITRON_PLANKS);
         blockItem(BlockRegistry.CITRON_LEAVES);
         blockItem(BlockRegistry.CITRON_WOOD);
         blockItem(BlockRegistry.CITRON_STRIPPED_WOOD);
@@ -56,6 +55,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(BlockRegistry.CITRON_PRESSURE_PLATE);
         blockItem(BlockRegistry.CITRON_FENCE_GATE);
         blockItem(BlockRegistry.CITRON_TRAPDOOR, "_bottom");
+        blockItem(BlockRegistry.CITRON_BUTTON);
+        blockItem(BlockRegistry.CITRON_PRESSURE_PLATE);
+
         makeCrop(((CropBlock) BlockRegistry.SHALLOT_CROP.get()), "shallot_crop_stage", "shallot_crop_stage");
 
     }

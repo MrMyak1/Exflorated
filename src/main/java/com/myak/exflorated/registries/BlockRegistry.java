@@ -3,6 +3,7 @@ package com.myak.exflorated.registries;
 import com.myak.exflorated.Exflorated;
 import com.myak.exflorated.block.ModLogBlock;
 import com.myak.exflorated.block.ShallotCropBlock;
+import com.myak.exflorated.block.ShrineMechanismBlock;
 import com.myak.exflorated.worldgen.tree.ModTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -14,7 +15,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -46,12 +46,14 @@ public class BlockRegistry {
     public static final DeferredBlock<DoorBlock> CITRON_DOOR = registerBlock("citron_door",()-> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR)));
     public static final DeferredBlock<ButtonBlock> CITRON_BUTTON = registerBlock("citron_button",()-> new ButtonBlock(BlockSetType.OAK, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
     public static final DeferredBlock<PressurePlateBlock> CITRON_PRESSURE_PLATE = registerBlock("citron_pressure_plate",()-> new PressurePlateBlock(BlockSetType.OAK,  BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
+    public static final DeferredBlock<SignBlock> CITRON_SIGN = BLOCKS.register("citron_sign", ()-> new StandingSignBlock(WoodType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
+    public static final DeferredBlock<WallSignBlock> CITRON_WALL_SIGN = BLOCKS.register("citron_wall_sign", ()-> new WallSignBlock(WoodType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN).lootFrom(BlockRegistry.CITRON_SIGN)));
 
     public static final DeferredBlock<Block> SHALLOT_CROP = BLOCKS.register("shallot_crop",
             ()-> new ShallotCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS)));
 
     public static final DeferredBlock<Block> REINFORCED_SCULK = registerBlock("reinforced_sculk",()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK)));
-    //public static final DeferredBlock<Block> SHRINE_MECHANISM = registerBlock("shrine_mechanism",()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS)));
+    public static final DeferredBlock<Block> SHRINE_MECHANISM = registerBlock("shrine_mechanism",()-> new ShrineMechanismBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

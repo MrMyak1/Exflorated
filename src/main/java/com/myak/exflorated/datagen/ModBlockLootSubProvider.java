@@ -48,6 +48,8 @@ public class ModBlockLootSubProvider extends BlockLootSubProvider {
         dropSelf(BlockRegistry.CITRON_DOOR.get());
         dropSelf(BlockRegistry.CITRON_PRESSURE_PLATE.get());
         dropSelf(BlockRegistry.CITRON_BUTTON.get());
+        dropSelf(BlockRegistry.SHRINE_MECHANISM.get());
+        dropSelf(BlockRegistry.CITRON_SIGN.get());
 
         LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.SHALLOT_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ShallotCropBlock.AGE, 4));

@@ -37,5 +37,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(BlockRegistry.CITRON_DOOR.get())
                 .add(BlockRegistry.CITRON_BUTTON.get())
                 .add(BlockRegistry.CITRON_PRESSURE_PLATE.get());
+        this.tag(BlockTags.FENCES)
+                .add(BlockRegistry.CITRON_FENCE.get());
+        this.tag(BlockTags.FENCE_GATES)
+                .add(BlockRegistry.CITRON_FENCE_GATE.get());
+
     }
 }
