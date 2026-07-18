@@ -1,0 +1,21 @@
+{
+  "parent": "exflorated:shrine_mechanism_advancement",
+  "display": {
+    "icon": {"id": "exflorated:bottle_of_strange_ooze"},
+    "title": {"translate": "advancement.exflorated.strange_ooze_advancement.title"},
+    "description": {"translate": "advancement.exflorated.strange_ooze_advancement.description"},
+    "frame": "task"
+  },
+  "criteria": {
+    "join": {
+      "conditions": {
+        "items": [
+          {
+            "items": "exflorated:bottle_of_strange_ooze"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  }
+}

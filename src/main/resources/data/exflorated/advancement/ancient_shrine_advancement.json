@@ -1,0 +1,21 @@
+{
+  "parent": "exflorated:shallot_advancement",
+  "display": {
+    "icon": {"id": "exflorated:reinforced_sculk"},
+    "title": {"translate": "advancement.exflorated.ancient_shrine_advancement.title"},
+    "description": {"translate": "advancement.exflorated.ancient_shrine_advancement.description"},
+    "frame": "goal"
+  },
+  "criteria": {
+    "join": {
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "exflorated:ancient_shrine"
+          }
+        }
+      },
+      "trigger": "minecraft:location"
+    }
+  }
+}

@@ -10,6 +10,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -25,7 +26,12 @@ public class PurifyingOilItem extends Item {
 
     private static final Map<Block, Block> CLENSING_MAP_TEMP = Map.of(
             Blocks.SCULK, Blocks.DIRT,
-            BlockRegistry.REINFORCED_SCULK.get(), Blocks.BONE_BLOCK
+            BlockRegistry.REINFORCED_SCULK.get(), Blocks.BONE_BLOCK,
+            Blocks.SCULK_VEIN, Blocks.AIR,
+            Blocks.SCULK_CATALYST, Blocks.BONE_BLOCK,
+            Blocks.SCULK_SENSOR, Blocks.AIR,
+            Blocks.SCULK_SHRIEKER, Blocks.BONE_BLOCK,
+            Blocks.CALIBRATED_SCULK_SENSOR, Blocks.AMETHYST_CLUSTER
 
     );
 
@@ -34,9 +40,6 @@ public class PurifyingOilItem extends Item {
         Level level = context.getLevel();
         Block clickedblock = level.getBlockState(context.getClickedPos()).getBlock();
         Player player = context.getPlayer();
-        Holder<Block> holder = clickedblock.defaultBlockState().getBlockHolder();
-        PurifyingOilCleansingMap map = Blocks.SCULK.defaultBlockState().getBlockHolder().getData(ModDatamaps.BLOCK_CLEANSING);
-        //System.out.println(map);
 
         if(CLENSING_MAP_TEMP.containsKey(clickedblock)) {
             if (level.isClientSide) {
@@ -46,9 +49,10 @@ public class PurifyingOilItem extends Item {
                 level.setBlockAndUpdate(context.getClickedPos(), CLENSING_MAP_TEMP.get(clickedblock).defaultBlockState());
                 level.playSound(null, context.getClickedPos(), SoundEvents.ZOMBIE_VILLAGER_CURE, SoundSource.PLAYERS, 0.25f, 1f);
             }
+            return InteractionResult.SUCCESS;
         }
 
-        return InteractionResult.SUCCESS;
+        return InteractionResult.FAIL;
     }
 
 }

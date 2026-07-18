@@ -1,0 +1,21 @@
+{
+  "parent": "exflorated:shallot_advancement",
+  "display": {
+    "icon": {"id": "exflorated:garlic_bread"},
+    "title": {"translate": "advancement.exflorated.garlic_bread_advancement.title"},
+    "description": {"translate": "advancement.exflorated.garlic_bread_advancement.description"},
+    "frame": "task"
+  },
+  "criteria": {
+    "join": {
+      "conditions": {
+        "items": [
+          {
+            "items": "exflorated:garlic_bread"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  }
+}

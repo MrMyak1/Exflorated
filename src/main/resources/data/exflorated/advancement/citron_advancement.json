@@ -1,0 +1,21 @@
+{
+  "parent": "exflorated:welcome_advancement",
+  "display": {
+    "icon": {"id": "exflorated:citron"},
+    "title": {"translate": "advancement.exflorated.citron_advancement.title"},
+    "description": {"translate": "advancement.exflorated.citron_advancement.description"},
+    "frame": "task"
+  },
+  "criteria": {
+    "join": {
+      "conditions": {
+        "items": [
+          {
+            "items": "exflorated:citron_sapling"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  }
+}

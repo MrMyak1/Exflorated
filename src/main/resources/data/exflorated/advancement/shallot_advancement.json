@@ -1,0 +1,21 @@
+{
+  "parent": "exflorated:welcome_advancement",
+  "display": {
+    "icon": {"id": "exflorated:shallot"},
+    "title": {"translate": "advancement.exflorated.shallot_advancement.title"},
+    "description": {"translate": "advancement.exflorated.shallot_advancement.description"},
+    "frame": "task"
+  },
+  "criteria": {
+    "join": {
+      "conditions": {
+        "items": [
+          {
+            "items": "exflorated:shallot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  }
+}

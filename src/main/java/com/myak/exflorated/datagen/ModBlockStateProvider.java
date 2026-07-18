@@ -43,6 +43,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         signBlock((StandingSignBlock) BlockRegistry.CITRON_SIGN.get(), (WallSignBlock) BlockRegistry.CITRON_WALL_SIGN.get(), blockTexture(BlockRegistry.CITRON_PLANKS.get()));
 
         blockWithItem(BlockRegistry.REINFORCED_SCULK);
+        blockWithItem(BlockRegistry.SHRINE_MECHANISM);
 
         blockItem(BlockRegistry.CITRON_LOG);
         blockItem(BlockRegistry.CITRON_STRIPPED_LOG);
@@ -55,7 +56,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(BlockRegistry.CITRON_PRESSURE_PLATE);
         blockItem(BlockRegistry.CITRON_FENCE_GATE);
         blockItem(BlockRegistry.CITRON_TRAPDOOR, "_bottom");
-        blockItem(BlockRegistry.CITRON_BUTTON);
         blockItem(BlockRegistry.CITRON_PRESSURE_PLATE);
 
         makeCrop(((CropBlock) BlockRegistry.SHALLOT_CROP.get()), "shallot_crop_stage", "shallot_crop_stage");

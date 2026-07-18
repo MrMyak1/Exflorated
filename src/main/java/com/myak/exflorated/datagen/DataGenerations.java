@@ -30,7 +30,6 @@ public class DataGenerations {
                 List.of(new LootTableProvider.SubProviderEntry(ModBlockLootSubProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
         generator.addProvider(event.includeServer(), new ModRecipeProvider(output, lookupProvider));
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(output, existingFileHelper));
-        generator.addProvider(event.includeServer(), new ModAdvancementProvider(output, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(output, existingFileHelper));
         generator.addProvider(event.includeServer(), new ModDatapackProvider(output, lookupProvider));
         generator.addProvider(event.includeClient(), new ModGlobalLootModifierProvider(output, lookupProvider));

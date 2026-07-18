@@ -1,0 +1,21 @@
+{
+  "parent": "exflorated:ancient_shrine_advancement",
+  "display": {
+    "icon": {"id": "exflorated:shrine_mechanism"},
+    "title": {"translate": "advancement.exflorated.shrine_mechanism_advancement.title"},
+    "description": {"translate": "advancement.exflorated.shrine_mechanism_advancement.description"},
+    "frame": "challenge"
+  },
+  "criteria": {
+    "join": {
+      "conditions": {
+        "items": [
+          {
+            "items": "exflorated:shrine_mechanism"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  }
+}

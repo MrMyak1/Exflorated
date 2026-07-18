@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "join": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:sniffer_egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.exflorated.welcome_advancement.description"
+    },
+    "frame": "task",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:sniffer_egg"
+    },
+    "title": {
+      "translate": "advancement.exflorated.welcome_advancement.title"
+    },
+    "background": "exflorated:textures/block/citron_planks.png"
+  },
+  "requirements": [
+    [
+      "join"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

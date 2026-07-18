@@ -37,6 +37,9 @@ public class CreativeTabRegistry {
                         output.accept(ItemRegistry.SHALLOT);
                         output.accept(ItemRegistry.PURIFYING_OIL);
                         output.accept(ItemRegistry.GARLIC_BREAD);
+                        output.accept(BlockRegistry.REINFORCED_SCULK);
+                        output.accept(BlockRegistry.SHRINE_MECHANISM);
+                        output.accept(ItemRegistry.BOTTLE_OF_STRANGE_OOZE);
                     })
                             .build());
 }

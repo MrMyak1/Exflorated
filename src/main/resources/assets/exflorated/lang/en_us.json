@@ -1,9 +1,4 @@
 {
-  "item.exflorated.citron": "Citron",
-  "item.exflorated.shallot": "Shallot",
-  "item.exflotated.transwheat": "Transwheat",
-
-
   "block.exflorated.citron_sapling": "Citron Sapling",
   "block.exflorated.citron_leaves": "Citron Leaves",
   "block.exflorated.citron_log": "Citron Log",
@@ -17,11 +12,31 @@
   "block.exflorated.citron_door": "Citron Door",
   "block.exflorated.citron_button": "Citron Button",
   "block.exflorated.citron_pressure_plate": "Citron Pressure Plate",
-
+  "block.exflorated.shallot_crop": "Shallot",
   "block.exflorated.reinforced_sculk": "Reinforced Sculk",
   "block.exflorated.shrine_mechanism": "Archaic Aparatus",
 
-  "block.exflorated.citron_shallot": "Shallot",
+  "item.exflorated.citron": "Citron",
+  "item.exflorated.shallot": "Shallot",
   "item.exflorated.purifying_oil": "Purifying Oil",
-  "item.exflorated.garlic_bread": "Garlic Bread"
+  "item.exflorated.garlic_bread": "Garlic Bread",
+  "item.exflorated.bottle_of_strange_ooze": "Bottle of Strange Ooze",
+
+  "creativetab.exflorated.exflorated_tab": "Exflorated",
+
+  "advancement.exflorated.welcome_advancement.title": "Exflorated",
+  "advancement.exflorated.welcome_advancement.description": "Welcome to exflorated! Find and hatch a Sniffer Egg, and let the fluffy beast digg up something unusual",
+  "advancement.exflorated.citron_advancement.title": "When life gives you lemons...",
+  "advancement.exflorated.citron_advancement.description": "Let a Sniffer digg up a Citron Sapling, an ancient acidic tree lost to time.",
+  "advancement.exflorated.shallot_advancement.title": "Vampires HATE him!",
+  "advancement.exflorated.shallot_advancement.description": "Let a Sniffer digg up a Shallot, an ancient purifying crop harvested by people long gone",
+  "advancement.exflorated.garlic_bread_advancement.title": "Bread+",
+  "advancement.exflorated.garlic_bread_advancement.description": "Craft Garlic Bread, a direct upgrade to bread in both nutrition and taste",
+  "advancement.exflorated.ancient_shrine_advancement.title": "Well, this cant be good",
+  "advancement.exflorated.ancient_shrine_advancement.description": "Discover a strange shrine in deepest of dark. Top of the monument seems to be covered in indestructable material. Maybe, something pure would help?",
+  "advancement.exflorated.shrine_mechanism_advancement.title": "Oozing with life",
+  "advancement.exflorated.shrine_mechanism_advancement.description": "A mechanism created by ancient civilizations, this holds immense agricultural and culinary power",
+  "advancement.exflorated.strange_ooze_advancement.title": "The Secret Formula",
+  "advancement.exflorated.strange_ooze_advancement.description": "Right-click the Archaic Apparatus to collect the strange ooze found within."
+
 }

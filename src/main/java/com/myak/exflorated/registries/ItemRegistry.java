@@ -2,9 +2,11 @@ package com.myak.exflorated.registries;
 
 import com.myak.exflorated.Exflorated;
 import com.myak.exflorated.item.PurifyingOilItem;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SignItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -36,7 +38,7 @@ public class ItemRegistry {
             () -> new Item(new Item.Properties().food(Foods.COOKED_BEEF)));
 
     public static final DeferredItem<Item> BOTTLE_OF_STRANGE_OOZE = ITEMS.register("bottle_of_strange_ooze",
-            () -> new Item(new Item.Properties().stacksTo(16)));
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.EPIC).component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)));
 
     //public static final DeferredItem<Item> CITRON_SIGN = ITEMS.register("citron_sign",
     //        () -> new SignItem(new Item.Properties(), BlockRegistry.CITRON_SIGN.get(), BlockRegistry.CITRON_WALL_SIGN.get()));

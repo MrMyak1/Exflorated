@@ -26,6 +26,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         buttonItem(BlockRegistry.CITRON_BUTTON, BlockRegistry.CITRON_PLANKS);
         fenceItem(BlockRegistry.CITRON_FENCE, BlockRegistry.CITRON_PLANKS);
         basicItem(BlockRegistry.CITRON_DOOR.asItem());
+        basicItem(ItemRegistry.BOTTLE_OF_STRANGE_OOZE.get());
 
     }
 
