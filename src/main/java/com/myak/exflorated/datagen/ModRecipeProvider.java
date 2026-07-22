@@ -6,6 +6,7 @@ import com.myak.exflorated.tag.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.Tags;
@@ -121,6 +122,6 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('A', ItemRegistry.BOTTLE_OF_STRANGE_OOZE)
                 .define('B', Items.WHEAT)
                 .unlockedBy("has_ooze", has(ItemRegistry.BOTTLE_OF_STRANGE_OOZE))
-                .save(output);
+                .save(output, ResourceLocation.fromNamespaceAndPath("exflorated", "bread").toString() + "_from_ooze");
     }
 }

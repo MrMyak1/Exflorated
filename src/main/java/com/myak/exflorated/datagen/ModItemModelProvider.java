@@ -23,7 +23,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ItemRegistry.CITRON.get());
         basicItem(ItemRegistry.PURIFYING_OIL.get());
         basicItem(ItemRegistry.GARLIC_BREAD.get());
-        buttonItem(BlockRegistry.CITRON_BUTTON, BlockRegistry.CITRON_PLANKS);
         fenceItem(BlockRegistry.CITRON_FENCE, BlockRegistry.CITRON_PLANKS);
         basicItem(BlockRegistry.CITRON_DOOR.asItem());
         basicItem(ItemRegistry.BOTTLE_OF_STRANGE_OOZE.get());
@@ -35,8 +34,8 @@ public class ModItemModelProvider extends ItemModelProvider {
                 ResourceLocation.parse("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(Exflorated.MODID, "block/" + item.getId().getPath()));
     }
-    private ItemModelBuilder buttonItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
-        return  withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
+    private void buttonItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
                 .texture("texture", ResourceLocation.fromNamespaceAndPath(Exflorated.MODID,
                         "block/" + baseBlock.getId().getPath()));
     }
