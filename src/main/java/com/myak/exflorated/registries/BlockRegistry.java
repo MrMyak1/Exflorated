@@ -4,6 +4,7 @@ import com.myak.exflorated.Exflorated;
 import com.myak.exflorated.block.ModLogBlock;
 import com.myak.exflorated.block.ShallotCropBlock;
 import com.myak.exflorated.block.ShrineMechanismBlock;
+import com.myak.exflorated.fluid.CitronJuiceBlock;
 import com.myak.exflorated.worldgen.tree.ModTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -15,6 +16,9 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -54,6 +58,8 @@ public class BlockRegistry {
 
     public static final DeferredBlock<Block> REINFORCED_SCULK = registerBlock("reinforced_sculk",()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK)));
     public static final DeferredBlock<Block> SHRINE_MECHANISM = registerBlock("shrine_mechanism",()-> new ShrineMechanismBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS)));
+
+    public static final DeferredBlock<Block> CITRON_JUICE_BLOCK = BLOCKS.register("citron_juice_block", ()-> new LiquidBlock(FluidRegistry.CITRON_JUICE_SOURCE.get(), BlockBehaviour.Properties.of().mapColor(MapColor.WATER).replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

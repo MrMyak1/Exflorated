@@ -25,7 +25,6 @@ public class ExampleModClient {
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         // Some client setup code
-        Exflorated.LOGGER.info("HELLO FROM CLIENT SETUP");
-        Exflorated.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
     }
 }

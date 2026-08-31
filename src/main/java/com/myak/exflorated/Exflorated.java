@@ -1,9 +1,6 @@
 package com.myak.exflorated;
 
-import com.myak.exflorated.registries.BlockRegistry;
-import com.myak.exflorated.registries.CreativeTabRegistry;
-import com.myak.exflorated.registries.ItemRegistry;
-import com.myak.exflorated.registries.LootModifierRegistry;
+import com.myak.exflorated.registries.*;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -34,6 +31,8 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import static net.neoforged.fml.loading.FMLEnvironment.dist;
+
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Exflorated.MODID)
 public class Exflorated {
@@ -56,6 +55,13 @@ public class Exflorated {
         BlockRegistry.BLOCKS.register(modEventBus);
         LootModifierRegistry.GLOBAL_LOOT_MODIFIERS.register(modEventBus);
         CreativeTabRegistry.CREATIVE_MOD_TAB.register(modEventBus);
+        FluidRegistry.FLUIDS.register(modEventBus);
+        FluidRegistry.FLUID_TYPES.register(modEventBus);
+
+        if (dist.isClient()) {
+            modEventBus.addListener(FluidRegistry::registerFluidRendering);
+            modEventBus.addListener(FluidRegistry::registerFluidLayerRendering);
+        }
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
