@@ -59,7 +59,7 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> REINFORCED_SCULK = registerBlock("reinforced_sculk",()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK)));
     public static final DeferredBlock<Block> SHRINE_MECHANISM = registerBlock("shrine_mechanism",()-> new ShrineMechanismBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS)));
 
-    public static final DeferredBlock<Block> CITRON_JUICE_BLOCK = BLOCKS.register("citron_juice_block", ()-> new LiquidBlock(FluidRegistry.CITRON_JUICE_SOURCE.get(), BlockBehaviour.Properties.of().mapColor(MapColor.WATER).replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY)));
+    public static final DeferredBlock<Block> CITRON_JUICE_BLOCK = BLOCKS.register("citron_juice_block", ()-> new CitronJuiceBlock(FluidRegistry.CITRON_JUICE_SOURCE.get(), BlockBehaviour.Properties.of().mapColor(MapColor.WATER).replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
