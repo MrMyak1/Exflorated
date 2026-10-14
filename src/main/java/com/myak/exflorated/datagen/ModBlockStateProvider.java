@@ -58,6 +58,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(BlockRegistry.CITRON_TRAPDOOR, "_bottom");
         blockItem(BlockRegistry.CITRON_PRESSURE_PLATE);
 
+
         makeCrop(((CropBlock) BlockRegistry.SHALLOT_CROP.get()), "shallot_crop_stage", "shallot_crop_stage");
 
     }

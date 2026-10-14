@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "exflorated:goldforge",
+      "weight": 3
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1,
+    "frequency": 1,
+    "spacing": 200,
+    "separation": 100
+  }
+}

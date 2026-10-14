@@ -20,7 +20,7 @@ public class CitronJuiceBlock extends LiquidBlock {
     protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         super.entityInside(state, level, pos, entity);
         if(entity instanceof LivingEntity livingEntity) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 5));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 20));
         }
     }
 

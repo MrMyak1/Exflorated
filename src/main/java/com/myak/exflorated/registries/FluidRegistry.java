@@ -55,13 +55,14 @@ public class FluidRegistry {
             }
 
             @Override
-            public @NotNull ResourceLocation getRenderOverlayTexture(Minecraft mc) {
-                return ResourceLocation.fromNamespaceAndPath(Exflorated.MODID, "misc/citron_juice_overlay");
+            public @Nullable ResourceLocation getOverlayTexture() {
+                return ResourceLocation.fromNamespaceAndPath(Exflorated.MODID, "block/citron_juice_overlay");
             }
+
 
             @Override
             public void renderOverlay(Minecraft mc, PoseStack poseStack) {
-                ResourceLocation texture = this.getRenderOverlayTexture(mc);
+                ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(Exflorated.MODID, "block/citron_juice_overlay");
                 ScreenEffectRenderer.renderFluid(mc, poseStack, texture);
             }
 
